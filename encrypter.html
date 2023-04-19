@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Encriptador de Texto</title>
-        <link rel="stylesheet" href="encrypt.css">
+        <link rel="stylesheet" href="encrypter.css">
     </head>
     <body>
 
@@ -30,18 +30,22 @@
 
 
             <div id="encriptador" style="display:none">
-                <h2>Encriptador de Texto</h2>
-                <form>
+                <form class="formulario">
                     <label for="texto">Texto:</label>
                     <textarea type="text" id="texto" name="texto" required></textarea>
                     <br>
-                    <input type="radio" id="encriptar" name="accion" value="encriptar" checked>
-                    <label for="encriptar">Encriptar</label>
-                    <input type="radio" id="desencriptar" name="accion" value="desencriptar">
-                    <label for="desencriptar">Desencriptar</label>
+                    <div>
+                        <input type="radio" id="encriptar" name="accion" value="encriptar" checked>
+                        <label for="encriptar">Encriptar</label>
+                        <input type="radio" id="desencriptar" name="accion" value="desencriptar">
+                        <label for="desencriptar">Desencriptar</label>
+                    </div>
                     <br>
-                    <button type="button" onclick="convertir()">Convertir</button>
-                    <button type="button" onclick="copiar()">Copiar</button>
+                    <div>
+                        <button type="button" onclick="convertir()">Convertir</button>
+                        <button type="button" onclick="copiar()">Copiar</button>
+                    </div>
+                    
                 </form>
                 <div id="resultado"></div>
                 <button onclick="document.getElementById('encriptador').style.display='none'">Cerrar</button>
