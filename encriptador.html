@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Encriptador de Texto</title>
+        <link rel="stylesheet" href="encrypt.css">
+    </head>
+    <body>
+
+        <main class="container">
+            <h1>Encriptador de Texto</h1>
+
+            <div class="options">
+                <div class="options-container">
+                    <button onclick="document.getElementById('instrucciones').style.display='block'">Instrucciones</button>
+                </div>
+                <div class="options-container">
+                    <button onclick="document.getElementById('encriptador').style.display='block'">Encriptador</button>
+                </div>
+            </div>
+
+            <div id="instrucciones" style="display:none">
+                <h2>Instrucciones de Uso</h2>
+                <p>1. Ingresa el texto que deseas encriptar o desencriptar en el campo correspondiente.</p>
+                <p>2. Selecciona la opción de "Encriptar" o "Desencriptar" según sea necesario.</p>
+                <p>3. Haz clic en el botón "Convertir" para obtener el resultado.</p>
+                <p>4. Si deseas copiar el resultado, haz clic en el botón "Copiar".</p>
+                <button onclick="document.getElementById('instrucciones').style.display='none'">Cerrar</button>
+            </div>
+
+
+            <div id="encriptador" style="display:none">
+                <h2>Encriptador de Texto</h2>
+                <form>
+                    <label for="texto">Texto:</label>
+                    <textarea type="text" id="texto" name="texto" required></textarea>
+                    <br>
+                    <input type="radio" id="encriptar" name="accion" value="encriptar" checked>
+                    <label for="encriptar">Encriptar</label>
+                    <input type="radio" id="desencriptar" name="accion" value="desencriptar">
+                    <label for="desencriptar">Desencriptar</label>
+                    <br>
+                    <button type="button" onclick="convertir()">Convertir</button>
+                    <button type="button" onclick="copiar()">Copiar</button>
+                </form>
+                <div id="resultado"></div>
+                <button onclick="document.getElementById('encriptador').style.display='none'">Cerrar</button>
+            </div>
+
+            <div id="errorModal" class="modal">
+                <div class="modal-contenido">
+                    <h2>Error</h2>
+                    <p id="errorMensaje"></p>
+                    <button onclick="document.getElementById('errorModal').style.display='none'">Cerrar</button>
+                </div>
+            </div>
+
+            <div id="aciertoModal" class="modal">
+                <div class="modal-contenido">
+                    <h2>Acierto</h2>
+                    <p id="aciertoMensaje"></p>
+                    <button onclick="document.getElementById('aciertoModal').style.display='none'">Cerrar</button>
+                </div>
+            </div>
+        </main>
+        <script src="encrypt.js"></script>
+    </body>
+</html>
